@@ -1,0 +1,24 @@
+1/5/2019
+========
+
+Am now planning to deploy the slideshow django app to Heroku
+(the PythonAnywhere pa_autoconfig... script is not working, and have spent a bit of time messing with it).
+
+Here is what I have read so far regarding Heroku deployment:
+1. Django is supported.
+   So all the work I have done to this point will get used.
+2. Will need to change DB to Postgres (but see note below - maybe no need to install locally).
+   This is what Heroku uses. DjangoGirls has a tutorial to install this:
+      https://tutorial-extensions.djangogirls.org/en/optional_postgresql_installation/
+   They also have a tutorial that continues the blog tutorial for Heroku:  
+      https://tutorial-extensions.djangogirls.org/en/heroku/
+3. I will use these in conjunction with the official Heroku tutorial:
+      https://devcenter.heroku.com/articles/getting-started-with-python#deploy-the-app
+4. The Heroku tutorial is for Python 3.7 (which would be my first choice).
+
+DATABASE:
+=========
+According to the DjangoGirls tutorial, I can use sqlite for local storage and postgres for deploy.
+This is handled by having a mysite/settings.py (postgres) and mysite/local_settings.py (sqlite) files.
+We can then run the migration from sqlite to postgres.
+
